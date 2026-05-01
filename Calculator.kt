@@ -1,13 +1,13 @@
-fun calculate(number1: Double, number2: Double, choice: Int): Double {
+fun calculate(number1: Double, number2: Double, operator: String): Double {
     var result: Double = 0.0; 
 
-    if (choice == 1) {
+    if (operator == "+") {
         result = number1 + number2;
-    } else if (choice == 2) {
+    } else if (operator == "-") {
         result = number1 - number2;
-    } else if (choice == 3) {
+    } else if (operator == "*") {
         result = number1 * number2;
-    } else if (choice == 4) {
+    } else if (operator == "/") {
         result = number1 / number2;
     }
 
@@ -18,25 +18,25 @@ fun main() {
     var run = true;
     var result: Double = 0.0; 
 
-    println("Input a number:");
+    print("Input a number: ");
     var number1: Double = readLine()!!.toDouble();
-    print("Choose: \n1. Addition 2. Deduction 3. Multiplication 4. Division \n> ");
-    var choice: Int = readLine()!!.toInt();
-    println("Input an another number:");
+    print("Choose an operator (+, -, *, /): \n> ");
+    var choice: String = readLine()!!
+    print("Input an another number: ");
     var number2: Double = readLine()!!.toDouble();
 
     result = calculate(number1, number2, choice);
 
     while (run == true) {
-        print("Choose: \n1. Addition 2. Deduction 3. Multiplication 4. Division 5. End \n> ");
-        var choice: Int = readLine()!!.toInt();
+        print("Choose an operator (+, -, *, /, =): \n> ");
+        var choice: String = readLine()!!
 
-        if (choice == 5) {
+        if (choice == "=") {
             run = false;
         } else {
             number1 = result;
 
-            println("Input an another number:");
+            print("Input an another number: ");
             number2 = readLine()!!.toDouble();
 
             result = calculate(number1, number2, choice);
@@ -44,4 +44,6 @@ fun main() {
     }
 
     println("Result: " + result);
+    print("Press enter to close. ")
+    var wait = readLine();
 }
