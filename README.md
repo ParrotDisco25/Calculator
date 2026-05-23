@@ -1,9 +1,10 @@
-# Calculator
+## Calculator
 
- - Written in Kotlin
+Simple calculator program written in Kotlin
 
-## Can do:
+### Features
  - Addition
  - Deduction
  - Multiplication
  - Division
+ - Exponentiation
